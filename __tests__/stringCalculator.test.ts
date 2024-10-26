@@ -39,4 +39,10 @@ describe('string calculator', () => {
       expect(() => add('1,-2,-3')).toThrow('no allowed negative numbers: -2,-3')
     })
   })
+
+  describe('ignore sum greater than 1000', () => {
+    test('should return sum if sum is not greater than 1000', () => {
+      expect(add('2,1001')).toBe(2)
+    })
+  })
 })
