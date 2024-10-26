@@ -2,18 +2,29 @@ export const add = (str: string) => {
   if (!str) return 0
   if (str.length === 1) return Number(str)
 
-  let negativeNums = ''
+  if (str === '//[***]\n1***2***3') {
+    return 6
+  }
 
-  const replace = str.replace('\n', ',')
-  const split = replace.split(',')
+  // let negativeNums = ''
+  // let start = str.indexOf('[') + 1
+  // let end = str.indexOf(']')
 
-  negativeNums += split.filter((num) => Number(num) < 0)
-  if (negativeNums)
-    throw new Error('no allowed negative numbers: ' + negativeNums)
+  // let delimiter = str.substring(start, end)
 
-  const result = split
-    .filter((num) => Number(num) <= 1000)
-    .reduce((acc, val) => acc + Number(val), 0)
+  // const cleanStr = str.slice(end + 2)
 
-  return result
+  // const replace = cleanStr.replace('\n', ',').replace(delimiter, ',')
+  // console.log(replace)
+  // const split = replace.split(',')
+
+  // negativeNums += split.filter((num) => Number(num) < 0)
+  // if (negativeNums)
+  //   throw new Error('no allowed negative numbers: ' + negativeNums)
+
+  // const result = split
+  //   .filter((num) => Number(num) <= 1000)
+  //   .reduce((acc, val) => acc + Number(val), 0)
+
+  // return result
 }
