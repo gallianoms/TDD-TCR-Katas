@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "ts-node tcr.ts && jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "tcr": "jest --no-watch && git add . && git commit -m 'TCR: Tests passed' || git reset --hard"
   },
   "keywords": [],
   "author": "",
