@@ -6,7 +6,7 @@ export const add = (str: string) => {
     return 6
   }
 
-  // let negativeNums = ''
+  let negativeNums = ''
   // let start = str.indexOf('[') + 1
   // let end = str.indexOf(']')
 
@@ -14,17 +14,17 @@ export const add = (str: string) => {
 
   // const cleanStr = str.slice(end + 2)
 
-  // const replace = cleanStr.replace('\n', ',').replace(delimiter, ',')
-  // console.log(replace)
-  // const split = replace.split(',')
+  const replace = str.replace('\n', ',')
+  console.log(replace)
+  const split = replace.split(',')
 
-  // negativeNums += split.filter((num) => Number(num) < 0)
-  // if (negativeNums)
-  //   throw new Error('no allowed negative numbers: ' + negativeNums)
+  negativeNums += split.filter((num) => Number(num) < 0)
+  if (negativeNums)
+    throw new Error('no allowed negative numbers: ' + negativeNums)
 
-  // const result = split
-  //   .filter((num) => Number(num) <= 1000)
-  //   .reduce((acc, val) => acc + Number(val), 0)
+  const result = split
+    .filter((num) => Number(num) <= 1000)
+    .reduce((acc, val) => acc + Number(val), 0)
 
-  // return result
+  return result
 }
