@@ -22,7 +22,7 @@ describe('string calculator', () => {
   describe('multiple numbers', () => {
     test('should return sum of multiple numbers', () => {
       expect(add('1,2,3')).toBe(6)
-      // expect(add('3,4')).toBe(7)
+      expect(add('3,4,5')).toBe(12)
     })
   })
 })
