@@ -5,8 +5,11 @@ export const add = (str: string) => {
   let negativeNums = ''
   const replace = str.replace('\n', ',')
   const split = replace.split(',')
+
   negativeNums += split.filter((num) => Number(num) < 0)
-  if (negativeNums) throw new Error('no allowed negative numbers: -3')
+  if (negativeNums)
+    throw new Error('no allowed negative numbers: ' + negativeNums)
+
   const result = split.reduce((acc, val) => acc + Number(val), 0)
 
   return result
