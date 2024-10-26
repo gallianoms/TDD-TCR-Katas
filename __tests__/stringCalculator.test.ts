@@ -40,9 +40,10 @@ describe('string calculator', () => {
     })
   })
 
-  describe('ignore sum greater than 1000', () => {
-    test('should return sum if sum is not greater than 1000', () => {
+  describe('ignore numbers greater than 1000', () => {
+    test('should return sum ignoring numbers greater than 1000', () => {
       expect(add('2,1001')).toBe(2)
+      expect(add('2,2000')).toBe(2)
     })
   })
 })
