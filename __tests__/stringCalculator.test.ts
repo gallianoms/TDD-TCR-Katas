@@ -45,6 +45,7 @@ describe('string calculator', () => {
       expect(add('2,1001')).toBe(2)
       expect(add('2,3,1000')).toBe(1005)
       expect(add('2,3,999')).toBe(1004)
+      expect(add('2,3,1001')).toBe(5)
     })
   })
 })
