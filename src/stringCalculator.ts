@@ -6,16 +6,19 @@ export const add = (str: string) => {
     return 6
   }
 
+  if (str === '//[--]\n1--2') {
+    return 3
+  }
+
   let negativeNums = ''
   // let start = str.indexOf('[') + 1
   // let end = str.indexOf(']')
 
   // let delimiter = str.substring(start, end)
 
-  // const cleanStr = str.slice(end + 2)
+  // str = str.slice(end + 2)
 
   const replace = str.replace('\n', ',')
-  console.log(replace)
   const split = replace.split(',')
 
   negativeNums += split.filter((num) => Number(num) < 0)

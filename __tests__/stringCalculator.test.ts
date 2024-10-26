@@ -52,6 +52,7 @@ describe('string calculator', () => {
   describe('delimiters with format //[delimiter]\n', () => {
     test('sum numbers with format //[***]\n1***2***3', () => {
       expect(add('//[***]\n1***2***3')).toBe(6)
+      expect(add('//[--]\n1--2')).toBe(3)
     })
   })
 })
