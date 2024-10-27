@@ -1,6 +1,7 @@
 import {extractDelimiters} from './extractDelimiters'
 import {validateNegatives} from './validateNegatives'
 import {processNumbers} from "./processNumbers";
+import {processWithDelimiters} from "./processWithDelimiters";
 
 export const add = (str: string): number => {
   // case base
@@ -13,11 +14,7 @@ export const add = (str: string): number => {
   numbers = processNumbers(str);
 
   if (delimiters.length > 0) {
-    let newStr = str.replaceAll('\n', ',').split(',')[1]
-
-    delimiters.forEach((del) => {
-      newStr = newStr.replaceAll(del, ',')
-    })
+    let newStr = processWithDelimiters(str, delimiters);
 
     numbers = newStr
       .split(',')
