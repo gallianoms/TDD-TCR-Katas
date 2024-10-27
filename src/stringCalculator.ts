@@ -1,4 +1,5 @@
 import { extractDelimiters } from './extractDelimiters'
+import { validateNegatives } from './validateNegatives'
 
 export const add = (str: string): number => {
   // case base
@@ -7,7 +8,6 @@ export const add = (str: string): number => {
   // variables
   let delimiters: string[]
   let numbers: number[]
-  let negatives: number[]
   let newStr: string
 
   delimiters = extractDelimiters(str)
@@ -32,11 +32,7 @@ export const add = (str: string): number => {
       .filter((val) => !isNaN(val))
       .filter((num) => num <= 1000)
   }
-
-  negatives = numbers.filter((num) => num < 0)
-
-  if (negatives.length > 0)
-    throw new Error('no allowed negative numbers: ' + negatives)
+  validateNegatives(numbers)
 
   return numbers.reduce((acc, num) => acc + num, 0)
 }
