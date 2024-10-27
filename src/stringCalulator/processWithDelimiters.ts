@@ -1,11 +1,14 @@
 import {processNumbers} from "./processNumbers";
 
+const NEW_LINE = '\n';
+const COMMA_SEPARATOR = ',';
+
 export function processWithDelimiters(str: string, delimiters: string[]): number[] {
-    let newStr = str.replaceAll('\n', ',').split(',')[1]
+    let parsed = str.replaceAll(NEW_LINE, COMMA_SEPARATOR).split(COMMA_SEPARATOR)[1]
 
-    delimiters.forEach((del) => {
-        newStr = newStr.replaceAll(del, ',')
-    })
+    for (const delimiter of delimiters) {
+        parsed = parsed.replaceAll(delimiter, COMMA_SEPARATOR);
+    }
 
-    return processNumbers(newStr);
+    return processNumbers(parsed);
 }
