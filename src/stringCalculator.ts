@@ -1,5 +1,6 @@
-import { extractDelimiters } from './extractDelimiters'
-import { validateNegatives } from './validateNegatives'
+import {extractDelimiters} from './extractDelimiters'
+import {validateNegatives} from './validateNegatives'
+import {processNumbers} from "./processNumbers";
 
 export const add = (str: string): number => {
   // case base
@@ -11,13 +12,7 @@ export const add = (str: string): number => {
   let newStr: string
 
   delimiters = extractDelimiters(str)
-
-  numbers = str
-    .replaceAll('\n', ',')
-    .split(',')
-    .map((val) => Number(val))
-    .filter((val) => !isNaN(val))
-    .filter((num) => num <= 1000)
+  numbers = processNumbers(str);
 
   if (delimiters.length > 0) {
     newStr = str.replaceAll('\n', ',').split(',')[1]
@@ -32,6 +27,7 @@ export const add = (str: string): number => {
       .filter((val) => !isNaN(val))
       .filter((num) => num <= 1000)
   }
+
   validateNegatives(numbers)
 
   return numbers.reduce((acc, num) => acc + num, 0)
