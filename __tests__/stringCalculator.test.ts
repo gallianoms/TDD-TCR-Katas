@@ -42,14 +42,14 @@ describe('string calculator', () => {
     })
   })
 
-  // describe('ignore numbers greater than 1000', () => {
-  //   test('should return sum ignoring numbers greater than 1000', () => {
-  //     expect(add('2,1001')).toBe(2)
-  //     expect(add('2,3,1000')).toBe(1005)
-  //     expect(add('2,3,999')).toBe(1004)
-  //     expect(add('2,3,1001')).toBe(5)
-  //   })
-  // })
+  describe('ignore numbers greater than 1000', () => {
+    test('should return sum ignoring numbers greater than 1000', () => {
+      expect(add('2,1001')).toBe(2)
+      expect(add('2,3,1000')).toBe(1005)
+      expect(add('2,3,999')).toBe(1004)
+      expect(add('2,3,1001')).toBe(5)
+    })
+  })
 
   // describe('delimiters with format //[delimiter]\n', () => {
   //   test('sum numbers with format //[***]\n1***2***3', () => {

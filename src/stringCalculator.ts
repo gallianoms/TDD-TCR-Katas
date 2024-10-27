@@ -6,6 +6,7 @@ export const add = (str: string) => {
     .split(',')
     .map((val) => Number(val))
     .filter((val) => !isNaN(val))
+    .filter((num) => num <= 1000)
 
   const negatives = numbers.filter((num) => num < 0)
   if (negatives.length > 0)
