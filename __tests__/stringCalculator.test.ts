@@ -26,12 +26,12 @@ describe('string calculator', () => {
     })
   })
 
-  // describe('jump lines', () => {
-  //   test('should return sum of multiple numbers with jump lines', () => {
-  //     expect(add('1\n2,3')).toBe(6)
-  //     expect(add('1\n2,\n3')).toBe(6)
-  //   })
-  // })
+  describe('jump lines', () => {
+    test('should return sum of multiple numbers with jump lines', () => {
+      expect(add('1\n2,3')).toBe(6)
+      expect(add('1\n2,\n3')).toBe(6)
+    })
+  })
 
   // describe('throw exception', () => {
   //   test('should throw exception for negative numbers and show numbers on exception message', () => {
