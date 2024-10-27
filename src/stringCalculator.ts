@@ -8,13 +8,12 @@ export const add = (str: string): number => {
 
   // variables
   let numbers: number[]
-  let newStr: string
 
   const delimiters = extractDelimiters(str)
   numbers = processNumbers(str);
 
   if (delimiters.length > 0) {
-    newStr = str.replaceAll('\n', ',').split(',')[1]
+    let newStr = str.replaceAll('\n', ',').split(',')[1]
 
     delimiters.forEach((del) => {
       newStr = newStr.replaceAll(del, ',')
