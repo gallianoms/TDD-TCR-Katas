@@ -1,11 +1,13 @@
 import { add } from '../src/stringCalculator'
 
 describe('string calculator', () => {
-  describe('empty or single numbers', () => {
+  describe('empty numbers', () => {
     test('should return 0 for empty string', () => {
       expect(add('')).toBe(0)
     })
+  })
 
+  describe('single numbers', () => {
     test('should return same number for single digits', () => {
       expect(add('1')).toBe(1)
       expect(add('2')).toBe(2)
