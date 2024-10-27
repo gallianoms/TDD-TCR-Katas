@@ -2,8 +2,8 @@ export const add = (str: string): number => {
   if (!str) return 0
   if (str.length === 1) return Number(str)
 
-  let delimiters: string[] = []
-  let numbers: number[] = []
+  let delimiters: string[]
+  let numbers: number[]
 
   delimiters = extractDelimiters(str)
   console.log(delimiters)
@@ -33,11 +33,11 @@ export const add = (str: string): number => {
   if (negatives.length > 0)
     throw new Error('no allowed negative numbers: ' + negatives)
 
-  return numbers.reduce((acc, num) => (acc += num), 0)
+  return numbers.reduce((acc, num) => (acc + num), 0)
 }
 
 export const extractDelimiters = (str: string): string[] => {
-  const regex = /\[([^\]]*)\]/g
+  const regex = /\[([^\]]*)]/g
 
   return str.match(regex)?.map((match) => match.slice(1, -1)) ?? []
 }
