@@ -1,4 +1,4 @@
-import { add } from '../src/stringCalculator'
+import { add } from '../src/stringCalulator/stringCalculator'
 
 describe('string calculator', () => {
   describe('empty numbers', () => {
