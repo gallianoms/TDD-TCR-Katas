@@ -4,7 +4,6 @@ import {processNumbers} from "./processNumbers";
 import {processWithDelimiters} from "./processWithDelimiters";
 
 export const add = (str: string): number => {
-  // case base
   if (!str) return 0
 
   const delimiters = extractDelimiters(str)

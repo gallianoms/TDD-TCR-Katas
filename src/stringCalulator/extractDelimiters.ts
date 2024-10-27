@@ -1,5 +1,7 @@
-export const extractDelimiters = (str: string): string[] => {
-  const regex = /\[([^\]]*)]/g
+const DELIMITER_REGEX = /\[([^\]]*)]/g
+const OPENING_BRACKET_LENGTH = 1
+const CLOSING_BRACKET_LENGTH = 1
 
-  return str.match(regex)?.map((match) => match.slice(1, -1)) ?? []
+export const extractDelimiters = (str: string): string[] => {
+    return str.match(DELIMITER_REGEX)?.map((match) => match.slice(OPENING_BRACKET_LENGTH, CLOSING_BRACKET_LENGTH)) ?? []
 }
