@@ -52,9 +52,15 @@ describe('string calculator', () => {
   })
 
   describe('delimiters with format //[delimiter]\n', () => {
-    test('sum numbers with format //[***]\n1***2***3', () => {
+    test('sum numbers with format //[delimiter]\n', () => {
       expect(add('//[***]\n1***2***3')).toBe(6)
       expect(add('//[--]\n1--2')).toBe(3)
+    })
+  })
+
+  describe('multiple delimiters with format //[delim1][delim2]\n', () => {
+    test('sum numbers with format //[delim1][delim2]\n', () => {
+      expect(add('//[*][%]\n1*2%3')).toBe(6)
     })
   })
 })
