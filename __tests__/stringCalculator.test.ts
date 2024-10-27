@@ -35,12 +35,12 @@ describe('string calculator', () => {
     })
   })
 
-  // describe('throw exception', () => {
-  //   test('should throw exception for negative numbers and show numbers on exception message', () => {
-  //     expect(() => add('1,2,-3')).toThrow('no allowed negative numbers: -3')
-  //     expect(() => add('1,-2,-3')).toThrow('no allowed negative numbers: -2,-3')
-  //   })
-  // })
+  describe('throw exception', () => {
+    test('should throw exception for negative numbers and show numbers on exception message', () => {
+      expect(() => add('1,2,-3')).toThrow('no allowed negative numbers: -3')
+      expect(() => add('1,-2,-3')).toThrow('no allowed negative numbers: -2,-3')
+    })
+  })
 
   // describe('ignore numbers greater than 1000', () => {
   //   test('should return sum ignoring numbers greater than 1000', () => {
