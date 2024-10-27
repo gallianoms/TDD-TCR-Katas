@@ -7,11 +7,10 @@ export const add = (str: string): number => {
   if (!str) return 0
 
   // variables
-  let delimiters: string[]
   let numbers: number[]
   let newStr: string
 
-  delimiters = extractDelimiters(str)
+  const delimiters = extractDelimiters(str)
   numbers = processNumbers(str);
 
   if (delimiters.length > 0) {
