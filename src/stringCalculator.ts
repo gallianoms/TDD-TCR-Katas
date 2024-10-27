@@ -5,6 +5,8 @@ export const add = (str: string): number => {
 
   let delimiters: string[]
   let numbers: number[]
+  let negatives: number[]
+  let newStr: string
 
   delimiters = extractDelimiters(str)
 
@@ -16,7 +18,7 @@ export const add = (str: string): number => {
     .filter((num) => num <= 1000)
 
   if (delimiters.length > 0) {
-    let newStr = str.replaceAll('\n', ',').split(',')[1]
+    newStr = str.replaceAll('\n', ',').split(',')[1]
 
     delimiters.forEach((del) => {
       newStr = newStr.replaceAll(del, ',')
@@ -29,7 +31,7 @@ export const add = (str: string): number => {
       .filter((num) => num <= 1000)
   }
 
-  const negatives = numbers.filter((num) => num < 0)
+  negatives = numbers.filter((num) => num < 0)
 
   if (negatives.length > 0)
     throw new Error('no allowed negative numbers: ' + negatives)
