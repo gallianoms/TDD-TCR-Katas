@@ -19,12 +19,12 @@ describe('string calculator', () => {
     })
   })
 
-  // describe('multiple numbers', () => {
-  //   test('should return sum of multiple numbers', () => {
-  //     expect(add('1,2,3')).toBe(6)
-  //     expect(add('3,4,5')).toBe(12)
-  //   })
-  // })
+  describe('multiple numbers', () => {
+    test('should return sum of multiple numbers', () => {
+      expect(add('1,2,3')).toBe(6)
+      expect(add('3,4,5')).toBe(12)
+    })
+  })
 
   // describe('jump lines', () => {
   //   test('should return sum of multiple numbers with jump lines', () => {
