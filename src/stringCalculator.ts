@@ -1,8 +1,10 @@
 import { extractDelimiters } from './extractDelimiters'
 
 export const add = (str: string): number => {
+  // case base
   if (!str) return 0
 
+  // variables
   let delimiters: string[]
   let numbers: number[]
   let negatives: number[]
