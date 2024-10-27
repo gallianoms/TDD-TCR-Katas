@@ -2,7 +2,6 @@ import { extractDelimiters } from './extractDelimiters'
 
 export const add = (str: string): number => {
   if (!str) return 0
-  // if (str.length === 1) return Number(str)
 
   let delimiters: string[]
   let numbers: number[]
