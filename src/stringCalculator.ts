@@ -1,4 +1,4 @@
-export const add = (str: string): any => {
+export const add = (str: string): number => {
   if (!str) return 0
   if (str.length === 1) return Number(str)
 
