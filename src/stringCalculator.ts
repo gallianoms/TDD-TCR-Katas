@@ -2,6 +2,7 @@ export const add = (str: string) => {
   if (!str) return 0
 
   const numbers = str
+    .replace('\n', ',')
     .split(',')
     .map((val) => Number(val))
     .filter((val) => !isNaN(val))
