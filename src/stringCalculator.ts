@@ -1,3 +1,5 @@
+import { extractDelimiters } from './extractDelimiters'
+
 export const add = (str: string): number => {
   if (!str) return 0
   if (str.length === 1) return Number(str)
@@ -6,7 +8,6 @@ export const add = (str: string): number => {
   let numbers: number[]
 
   delimiters = extractDelimiters(str)
-  console.log(delimiters)
 
   numbers = str
     .replaceAll('\n', ',')
@@ -16,12 +17,12 @@ export const add = (str: string): number => {
     .filter((num) => num <= 1000)
 
   if (delimiters.length > 0) {
-    console.log(delimiters)
-
     let newStr = str.replaceAll('\n', ',').split(',')[1]
+
     delimiters.forEach((del) => {
       newStr = newStr.replaceAll(del, ',')
     })
+
     numbers = newStr
       .split(',')
       .map((val) => Number(val))
@@ -30,14 +31,9 @@ export const add = (str: string): number => {
   }
 
   const negatives = numbers.filter((num) => num < 0)
+
   if (negatives.length > 0)
     throw new Error('no allowed negative numbers: ' + negatives)
 
-  return numbers.reduce((acc, num) => (acc + num), 0)
-}
-
-export const extractDelimiters = (str: string): string[] => {
-  const regex = /\[([^\]]*)]/g
-
-  return str.match(regex)?.map((match) => match.slice(1, -1)) ?? []
+  return numbers.reduce((acc, num) => acc + num, 0)
 }
